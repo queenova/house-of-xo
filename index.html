@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>House of XO | The Weeknd Fan Community</title>
+
+    <meta
+        name="description"
+        content="House of XO — The Weeknd fan community. News, concerts, archives, edits, music and XO community."
+    >
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           HOUSE OF XO — GREEN THEME
+           Main green: #39ff88
+        ========================================================= */
+
+        :root {
+            --background: #030303;
+            --background-light: #0a0a0a;
+
+            --white: #ffffff;
+            --gray: #999999;
+            --gray-light: #cfcfcf;
+
+            --green: #39ff88;
+            --green-dark: #087a3d;
+            --green-soft: #0b6b3a;
+
+            --border: rgba(255,255,255,0.10);
+
+            --glass:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                );
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--background);
+            color: var(--white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(57,255,136,0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 60%,
+                    rgba(11,107,58,0.12),
+                    transparent 30%
+                ),
+                #030303;
+        }
+
+
+        .glow {
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background: rgba(57,255,136,0.08);
+
+            filter: blur(100px);
+
+            animation: floatingGlow 10s infinite alternate ease-in-out;
+        }
+
+
+        .glow.one {
+            top: -250px;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+
+        .glow.two {
+            bottom: -250px;
+            right: -150px;
+
+            background: rgba(8,122,61,0.09);
+
+            animation-delay: 2s;
+        }
+
+
+        .grid {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+        }
+
+
+        @keyframes floatingGlow {
+
+            from {
+                transform: translate(-50%, -20px) scale(1);
+            }
+
+            to {
+                transform: translate(-50%, 30px) scale(1.15);
+            }
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+            position: sticky;
+            top: 15px;
+
+            width: min(900px, calc(100% - 30px));
+
+            margin: 15px auto 0;
+
+            padding: 10px 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background: rgba(10,10,10,0.72);
+
+            backdrop-filter: blur(20px);
+
+            z-index: 100;
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.35);
+        }
+
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .nav-brand img {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            box-shadow:
+                0 0 20px rgba(57,255,136,0.25);
+        }
+
+
+        .nav-brand span {
+            font-family: "Montserrat", sans-serif;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            font-size: 12px;
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        .nav-links a {
+            padding: 9px 12px;
+
+            border-radius: 10px;
+
+            color: #999;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--green);
+
+            background: rgba(57,255,136,0.06);
+        }
+
+
+        .nav-discord {
+            border: 1px solid rgba(57,255,136,0.30);
+
+            background: rgba(57,255,136,0.07);
+
+            color: white !important;
+        }
+
+
+        .nav-discord:hover {
+            border-color: rgba(57,255,136,0.55);
+
+            background: rgba(57,255,136,0.12);
+        }
+
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
+
+        .container {
+            width: min(900px, calc(100% - 30px));
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            text-align: center;
+
+            padding: 75px 0 65px;
+
+            animation: fadeUp 0.9s ease both;
+        }
+
+
+        .hero-logo {
+            width: 230px;
+            height: 230px;
+
+            display: block;
+
+            margin: 0 auto 32px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 60px rgba(57,255,136,0.20),
+                0 0 110px rgba(11,107,58,0.10);
+        }
+
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 8px 13px;
+
+            border-radius: 999px;
+
+            border: 1px solid rgba(57,255,136,0.30);
+
+            background: rgba(57,255,136,0.07);
+
+            color: #ddd;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+
+        .hero h1 {
+            margin-top: 20px;
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: clamp(42px, 8vw, 72px);
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+            line-height: 1;
+        }
+
+
+        .hero h1 span {
+            color: var(--green);
+
+            text-shadow:
+                0 0 25px rgba(57,255,136,0.25);
+        }
+
+
+        .hero-subtitle {
+            margin-top: 18px;
+
+            font-size: 15px;
+
+            color: var(--gray-light);
+        }
+
+
+        .hero-description {
+            max-width: 650px;
+
+            margin: 14px auto 0;
+
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+
+        .languages {
+            margin-top: 18px;
+
+            color: #666;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 28px;
+        }
+
+
+        .button {
+            padding: 12px 17px;
+
+            border-radius: 12px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            border: 1px solid var(--border);
+
+            transition: 0.2s;
+        }
+
+
+        .button-main {
+            background: var(--green);
+
+            border-color: var(--green);
+
+            color: #030303;
+
+            box-shadow:
+                0 0 20px rgba(57,255,136,0.08);
+        }
+
+
+        .button-main:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px rgba(57,255,136,0.20);
+        }
+
+
+        .button-secondary {
+            background: rgba(255,255,255,0.025);
+
+            color: white;
+        }
+
+
+        .button-secondary:hover {
+            border-color: rgba(57,255,136,0.35);
+
+            background: rgba(57,255,136,0.08);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        .section {
+            padding-bottom: 70px;
+
+            animation: fadeUp 1s ease both;
+        }
+
+
+        .section-heading {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            color: #666;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-heading::after {
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background: var(--border);
+        }
+
+
+        /* =========================================================
+           SOCIAL LINKS
+        ========================================================= */
+
+        .links {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 13px;
+        }
+
+
+        .social-link {
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            min-height: 75px;
+
+            padding: 14px 17px;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--border);
+
+            background: var(--glass);
+
+            backdrop-filter: blur(15px);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .social-link::before {
+            content: "";
+
+            position: absolute;
+
+            left: -100%;
+
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(57,255,136,0.08),
+                    transparent
+                );
+
+            transition: 0.5s;
+        }
+
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+
+        .social-link:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(57,255,136,0.30);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.40),
+                0 0 25px rgba(57,255,136,0.04);
+        }
+
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 13px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+
+        .social-link:hover .social-icon {
+            border-color: rgba(57,255,136,0.25);
+
+            background: rgba(57,255,136,0.08);
+
+            color: var(--green);
+        }
+
+
+        .social-info {
+            margin-left: 14px;
+        }
+
+
+        .social-title {
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        .social-subtitle {
+            margin-top: 5px;
+
+            font-size: 9px;
+
+            color: #666;
+        }
+
+
+        .arrow {
+            margin-left: auto;
+
+            color: #555;
+
+            font-size: 22px;
+
+            transition: 0.2s;
+        }
+
+
+        .social-link:hover .arrow {
+            transform: translateX(5px);
+
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about {
+            padding: 27px;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.015)
+                );
+
+            backdrop-filter: blur(15px);
+        }
+
+
+        .about h2 {
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 20px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .about p {
+            color: #888;
+
+            font-size: 11px;
+
+            line-height: 1.9;
+        }
+
+
+        .about strong {
+            color: white;
+        }
+
+
+        .about strong:hover {
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           FEATURES
+        ========================================================= */
+
+        .features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .feature {
+            padding: 20px;
+
+            min-height: 155px;
+
+            border-radius: 17px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.015)
+                );
+
+            transition: 0.2s;
+        }
+
+
+        .feature:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(57,255,136,0.28);
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,0.25);
+        }
+
+
+        .feature-icon {
+            font-size: 21px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .feature h3 {
+            font-size: 12px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .feature p {
+            font-size: 9px;
+
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           ERAS
+        ========================================================= */
+
+        .eras {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .era {
+            padding: 10px 13px;
+
+            border-radius: 999px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.025);
+
+            color: #bbb;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+
+        .era:hover {
+            color: var(--green);
+
+            border-color:
+                rgba(57,255,136,0.30);
+
+            background:
+                rgba(57,255,136,0.06);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           LANGUAGE BOX
+        ========================================================= */
+
+        .language-box {
+            margin-bottom: 65px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.015)
+                );
+        }
+
+
+        .language-box h3 {
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 14px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .language-box p {
+            color: #777;
+
+            font-size: 10px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           QUOTE
+        ========================================================= */
+
+        .quote {
+            text-align: center;
+
+            padding: 35px 20px;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(57,255,136,0.18);
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(57,255,136,0.10),
+                    transparent 60%
+                ),
+                rgba(255,255,255,0.02);
+        }
+
+
+        .quote h2 {
+            font-family: "Montserrat", sans-serif;
+
+            font-size: clamp(25px, 6vw, 43px);
+
+            letter-spacing: -2px;
+        }
+
+
+        .quote span {
+            display: block;
+
+            margin-top: 10px;
+
+            color: var(--green);
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 15px rgba(57,255,136,0.18);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 30px 0 40px;
+
+            text-align: center;
+
+            color: #444;
+
+            font-size: 9px;
+
+            line-height: 1.8;
+        }
+
+
+        footer strong {
+            color: #888;
+
+            transition: 0.2s;
+        }
+
+
+        footer strong:hover {
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .features {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                top: 8px;
+            }
+
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .container {
+                width: calc(100% - 24px);
+            }
+
+
+            .hero {
+                padding-top: 55px;
+            }
+
+
+            .hero-logo {
+                width: 180px;
+                height: 180px;
+            }
+
+
+            .hero h1 {
+                font-size: 43px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .links {
+                grid-template-columns: 1fr;
+            }
+
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+
+            .about {
+                padding: 21px;
+            }
+
+
+            .button {
+                width: 100%;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background">
+
+    <div class="glow one"></div>
+
+    <div class="glow two"></div>
+
+    <div class="grid"></div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+    <a href="#top" class="nav-brand">
+
+        <img
+            src="logo.png"
+            alt="House of XO"
+        >
+
+        <span>
+            HOUSE OF XO
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#links">
+            Socials
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#community">
+            Community
+        </a>
+
+        <a
+            href="https://discord.gg/Tk2vvVvDD"
+            target="_blank"
+            rel="noopener"
+            class="nav-discord"
+        >
+            Discord ↗
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main
+    class="container"
+    id="top"
+>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <header class="hero">
+
+        <img
+            class="hero-logo"
+            src="logo.png"
+            alt="House of XO logo"
+        >
+
+
+        <div class="hero-badge">
+            ● THE WEEKND FAN COMMUNITY
+        </div>
+
+
+        <h1>
+            HOUSE OF <span>XO</span>
+        </h1>
+
+
+        <p class="hero-subtitle">
+            The Weeknd Fan Community 🌙
+        </p>
+
+
+        <p class="hero-description">
+
+            Une communauté dédiée à The Weeknd.
+            Retrouvez les actualités, les concerts,
+            les edits, les archives et tout l'univers XO.
+
+            <br>
+
+            A community dedicated to The Weeknd.
+            News, concerts, edits, archives and everything XO.
+
+        </p>
+
+
+        <div class="languages">
+
+            🇫🇷 FRANÇAIS
+            &nbsp; • &nbsp;
+            🇬🇧 ENGLISH
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                href="#links"
+                class="button button-main"
+            >
+                MES RÉSEAUX / SOCIALS ↓
+            </a>
+
+
+            <a
+                href="https://discord.gg/Tk2vvVvDD"
+                target="_blank"
+                rel="noopener"
+                class="button button-secondary"
+            >
+                REJOINDRE LE DISCORD / JOIN THE DISCORD
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         SOCIAL LINKS
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="links"
+    >
+
+        <div class="section-heading">
+            House of XO
+        </div>
+
+
+        <div class="links">
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/houseofxo.fr/"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <div class="social-icon">
+                    ◎
+                </div>
+
+
+                <div class="social-info">
+
+                    <div class="social-title">
+                        Instagram
+                    </div>
+
+                    <div class="social-subtitle">
+                        Actualités • News • Edits
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+            <!-- TIKTOK -->
+
+            <a
+                class="social-link"
+                href="https://www.tiktok.com/@houseofxo.fr"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <div class="social-icon">
+                    ♪
+                </div>
+
+
+                <div class="social-info">
+
+                    <div class="social-title">
+                        TikTok
+                    </div>
+
+                    <div class="social-subtitle">
+                        Videos • Edits • Content
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+            <!-- DISCORD -->
+
+            <a
+                class="social-link"
+                href="https://discord.gg/Tk2vvVvDD"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <div class="social-icon">
+                    ◈
+                </div>
+
+
+                <div class="social-info">
+
+                    <div class="social-title">
+                        Discord
+                    </div>
+
+                    <div class="social-subtitle">
+                        Rejoins-nous • Join the community
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+            <!-- X -->
+
+            <a
+                class="social-link"
+                href="https://x.com/Soldier07746414"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <div class="social-icon">
+                    𝕏
+                </div>
+
+
+                <div class="social-info">
+
+                    <div class="social-title">
+                        X / Twitter
+                    </div>
+
+                    <div class="social-subtitle">
+                        Updates • News • XO
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="about"
+    >
+
+        <div class="section-heading">
+            About House of XO
+        </div>
+
+
+        <div class="about">
+
+            <h2>
+                Bienvenue chez House of XO 🌙
+            </h2>
+
+
+            <p>
+
+                <strong>House of XO</strong>
+                est une communauté française et internationale
+                créée par des fans de The Weeknd.
+
+                <br><br>
+
+                Notre objectif est de réunir les fans autour
+                de toutes les ères de The Weeknd :
+
+                <br><br>
+
+                <strong>
+                    Trilogy • Kiss Land • Beauty Behind the Madness
+                    • Starboy • My Dear Melancholy
+                    • After Hours • Dawn FM • Hurry Up Tomorrow
+                </strong>
+
+                <br><br>
+
+                🇬🇧 <strong>House of XO</strong> is a French and international
+                fan community dedicated to The Weeknd.
+
+                <br><br>
+
+                News, concerts, edits, archives, collections,
+                theories and everything XO — all in one place.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMMUNITY
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="community"
+    >
+
+        <div class="section-heading">
+            The XO Community
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📰
+                </div>
+
+                <h3>
+                    News • Actualités
+                </h3>
+
+                <p>
+                    Toutes les dernières nouvelles
+                    concernant The Weeknd.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎤
+                </div>
+
+                <h3>
+                    Concerts • Live
+                </h3>
+
+                <p>
+                    Archives, photos, vidéos et
+                    informations des concerts.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Edits • Créations
+                </h3>
+
+                <p>
+                    Découvrez les créations
+                    de la communauté XO.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💿
+                </div>
+
+                <h3>
+                    Collections • Merch
+                </h3>
+
+                <p>
+                    Collections, vinyles, merch
+                    et objets liés à The Weeknd.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ERAS
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            The Weeknd Eras
+        </div>
+
+
+        <div class="eras">
+
+            <span class="era">
+                Trilogy
+            </span>
+
+            <span class="era">
+                Kiss Land
+            </span>
+
+            <span class="era">
+                Beauty Behind the Madness
+            </span>
+
+            <span class="era">
+                Starboy
+            </span>
+
+            <span class="era">
+                My Dear Melancholy
+            </span>
+
+            <span class="era">
+                After Hours
+            </span>
+
+            <span class="era">
+                Dawn FM
+            </span>
+
+            <span class="era">
+                Hurry Up Tomorrow
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LANGUAGE
+    ====================================================== -->
+
+    <section class="language-box">
+
+        <h3>
+            🇫🇷 🇬🇧 Une communauté pour tous
+        </h3>
+
+
+        <p>
+
+            Français ou English, tout le monde est
+            le bienvenu chez House of XO.
+
+            <br>
+
+            Whether you speak French or English,
+            everyone is welcome in the XO community.
+
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         QUOTE
+    ====================================================== -->
+
+    <section>
+
+        <div class="quote">
+
+            <h2>
+                XO TILL WE OVERDOSE
+            </h2>
+
+            <span>
+                BUILT BY XO, FOR XO
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <strong>
+            HOUSE OF XO 🌙
+        </strong>
+
+        <br>
+
+        © 2026 House of XO
+
+        <br>
+
+        Fan-made community • Not affiliated with The Weeknd
+
+    </footer>
+
+
+</main>
+
+
+</body>
+</html>
