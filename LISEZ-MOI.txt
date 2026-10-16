@@ -1,0 +1,30 @@
+HOUSE OF XO — SITE WEB
+
+Fichiers :
+- index.html : structure du site
+- style.css : design, couleurs et mise en page
+- script.js : traduction FR/EN et interactions
+- logo.png : vrai logo House of XO utilisé dans le site et comme favicon
+
+POUR OUVRIR LE SITE
+1. Décompressez le dossier.
+2. Gardez tous les fichiers ensemble dans le même dossier.
+3. Ouvrez index.html dans votre navigateur ou avec Live Server dans VS Code.
+
+LANGUES
+Les boutons 🇫🇷 FR et 🇬🇧 EN se trouvent en haut à droite. Une aide juste sous la barre de navigation explique leur fonction. Cliquer sur l'un des boutons traduit l'ensemble du site et le choix est mémorisé dans le navigateur.
+
+POUR PUBLIER SUR GITHUB PAGES
+Envoyez les quatre fichiers du dossier dans le dépôt GitHub, à la racine du site. Ne renommez pas logo.png sans modifier les références dans index.html.
+
+À SAVOIR
+Le lien de XO Live Archive est présenté comme accessible via Discord. Si l'URL réelle de l'archive est publique, le fait de partager le lien uniquement sur Discord ne la protège pas techniquement.
+
+NOUVELLE VERSION — ANIMATIONS
+- Barre de progression lumineuse pendant le défilement.
+- Particules vertes discrètes en arrière-plan.
+- Halo subtil qui suit la souris sur ordinateur.
+- Cartes interactives avec inclinaison légère au survol.
+- Animations du logo, de l’archive et des boutons.
+- Indicateur « Défiler pour explorer » sous la page d’accueil.
+Les animations respectent le réglage système « réduire les animations ».
